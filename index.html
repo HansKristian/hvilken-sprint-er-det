@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sprint 47</title>
+    <title>Sprint 48</title>
     <style>
         body {
             background-color: #f2f2f2;
@@ -20,13 +20,27 @@
         h1 {
             font-size: 3em;
         }
+        h2 {
+            font-size: 2em;
+        }
     </style>
-    <!-- Legg til lenken til Roboto-fonten -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function getWeekNumber() {
+            const now = new Date();
+            const startOfYear = new Date(now.getFullYear(), 0, 1);
+            const days = Math.floor((now - startOfYear) / 86400000);
+            const weekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
+        return weekNumber;
+        }
+        element = document.getElementById("weeknumber");
+        element.textContent = getWeekNumber();
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Vi er i sprint 47</h1>
+        <h1>Vi er i sprint 48</h1>
+        <h2>Og ukenummer <span id="weeknumber"></span></h2>
     </div>
 </body>
 </html>
