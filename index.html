@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sprint 48</title>
+    <title>Sprint 44</title>
     <style>
         body {
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif; /* Bruk Roboto-fonten */
+            font-family: 'Roboto', sans-serif;
             color: #4caf50;
         }
         .container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -21,26 +22,32 @@
             font-size: 3em;
         }
         h2 {
-            font-size: 2em;
+            font-size: 1.5em;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script>
+        // Funksjon for å beregne ukenummer
         function getWeekNumber() {
-            const now = new Date();
-            const startOfYear = new Date(now.getFullYear(), 0, 1);
-            const days = Math.floor((now - startOfYear) / 86400000);
+            const today = new Date();
+            const startOfYear = new Date(today.getFullYear(), 0, 1);
+            const days = Math.floor((today - startOfYear) / (24 * 60 * 60 * 1000));
             const weekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
-        return weekNumber;
+            return weekNumber;
         }
-        element = document.getElementById("weeknumber");
-        element.textContent = getWeekNumber();
+        
+        // Oppdaterer ukenummer i HTML
+        window.onload = function() {
+            const weekNumber = getWeekNumber();
+            const weekElement = document.getElementById("weekNumber");
+            weekElement.textContent = "Og uke " + weekNumber;
+        };
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Vi er i sprint 48</h1>
-        <h2>Og ukenummer <span id="weeknumber"></span></h2>
+        <h1>Vi er i sprint 44</h1><br />
+        <h2 id="weekNumber"></h2>
     </div>
 </body>
 </html>
