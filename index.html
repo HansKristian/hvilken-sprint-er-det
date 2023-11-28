@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sprint 48</title>
+    <title>Sprint 49</title>
     <style>
         body {
             background-color: #f2f2f2;
@@ -41,12 +41,17 @@
             const weekNumber = getWeekNumber();
             const weekElement = document.getElementById("weekNumber");
             weekElement.textContent = "Og uke " + weekNumber;
+            if (weekNumber === 49) {
+                const sprintElement = document.getElementById("sprintNumer");
+                weekElement.textContent = "Vi er i både sprint og uke " + weekNumber;
+                weekElement.textContent = "... endelig match!";
+            }
         };
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Vi er i sprint 48</h1><br />
+        <h1 id="sprintNumer">Vi er i sprint 49</h1><br />
         <h2 id="weekNumber"></h2>
     </div>
 </body>
