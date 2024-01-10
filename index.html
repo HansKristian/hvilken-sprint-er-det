@@ -35,23 +35,32 @@
             const weekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
             return weekNumber;
         }
+
+         function getSprintNumber(weekNumber) {
+            const sprintDuration = 3;
+            const startWeek = 2;
+            const startSprint = 51;
+             
+            const adjustedWeekNumber = weekNumber - startWeek;
+            const sprintNumber = Math.floor(adjustedWeekNumber / sprintDuration) + startSprint;
+            return sprintNumber;
+        }
         
         // Oppdaterer ukenummer i HTML
         window.onload = function() {
             const weekNumber = getWeekNumber();
             const weekElement = document.getElementById("weekNumber");
             weekElement.textContent = "Og uke " + weekNumber;
-            if (weekNumber === 49) {
-                const sprintElement = document.getElementById("sprintNumer");
-                sprintElement.textContent = "Vi er i både sprint og uke " + weekNumber;
-                weekElement.textContent = "... endelig match!";
-            }
+
+            const sprintNumer = getSprintNumer(weekNumber);
+            const sprintElement = document.getElementById("sprintNumber");
+            sprintElement.textContent = "Vi er i sprint " + sprintNumber;
         };
     </script>
 </head>
 <body>
     <div class="container">
-        <h1 id="sprintNumer">Vi er i sprint 51</h1><br />
+        <h1 id="sprintNumber">Vi er i sprint 51</h1><br />
         <h2 id="weekNumber"></h2>
     </div>
 </body>
