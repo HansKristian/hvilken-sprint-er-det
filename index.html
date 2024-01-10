@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sprint 51</title>
+    <title>Hvilken sprint er det?</title>
     <style>
         body {
             background-color: #f2f2f2;
@@ -52,7 +52,7 @@
             const weekElement = document.getElementById("weekNumber");
             weekElement.textContent = "Og uke " + weekNumber;
 
-            const sprintNumer = getSprintNumer(weekNumber);
+            const sprintNumber = getSprintNumber(weekNumber);
             const sprintElement = document.getElementById("sprintNumber");
             sprintElement.textContent = "Vi er i sprint " + sprintNumber;
         };
@@ -60,7 +60,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="sprintNumber">Vi er i sprint 51</h1><br />
+        <h1 id="sprintNumber"></h1><br />
         <h2 id="weekNumber"></h2>
     </div>
 </body>
