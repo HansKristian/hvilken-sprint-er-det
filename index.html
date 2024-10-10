@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Hvilken sprint er det?</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
     <style>
         body {
             background-color: #f2f2f2;
@@ -26,7 +28,7 @@
             font-size: 1.5em;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <script>
         // Funksjon for å beregne ukenummer
         function getWeekNumber() {
@@ -39,8 +41,8 @@
 
          function getSprintNumber(weekNumber) {
             const sprintDuration = 3;
-            const startWeek = 32;
-            const startSprint = 60;
+            const startWeek = 41;
+            const startSprint = 62;
              
             const adjustedWeekNumber = weekNumber - startWeek;
             const sprintNumber = Math.floor(adjustedWeekNumber / sprintDuration) + startSprint;
@@ -51,18 +53,18 @@
         window.onload = function() {
             const weekNumber = getWeekNumber();
             const weekElement = document.getElementById("weekNumber");
-            weekElement.textContent = "Og uke " + weekNumber;
+            weekElement.textContent = "Og uke nummer " + weekNumber;
 
             const sprintNumber = getSprintNumber(weekNumber);
             const sprintElement = document.getElementById("sprintNumber");
-            sprintElement.textContent = "Vi er ikke i sprint " + sprintNumber;
+            sprintElement.textContent = "Vi er i sprint " + sprintNumber;
         };
     </script>
 </head>
 <body>
     <div class="container">
-        <h1 id="sprintNumber"></h1><br />
-        <h2 id="weekNumber"></h2>
+        <h1 class="shake-slow" id="sprintNumber"></h1><br />
+        <h2 class="shake-hard" id="weekNumber"></h2>
     </div>
 </body>
 </html>
